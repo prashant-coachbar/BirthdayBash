@@ -42,7 +42,7 @@ export default function Header({ handleModalOpen,count }) {
         <h1>Birthday Bash</h1>
       </div>
       <div id='middletitle'>
-        <h3>Spreading Joys🎂🎉</h3>
+        <h2>SPREADING JOYS🎂🎉</h2>
       </div>
       <SelectedWishesButton onClick={handleModalOpen}>
         My Wishes ({count})

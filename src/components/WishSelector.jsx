@@ -1,7 +1,7 @@
 // src/components/WishSelector.js
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Modal from './Modal';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Modal from "./Modal";
 
 const wishes = [
   "Launch AppVentory successfully.",
@@ -38,31 +38,48 @@ const WishContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background: #F1F1F1;
+  background: #f1f1f1;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+`;
+const WishDemoContainer = styled.div`
+  height: 400px
 `;
 
 const WishItem = styled.div`
   flex: 1 0 45%;
   margin: 10px;
   padding: 10px;
-  background: ${(props) => (props.iselected ? '#009688' : '#FFFFFF')};
-  color: ${(props) => (props.iselected ? '#FFFFFF' : '#333')};
+  background: ${(props) => (props.iselected ? "#009688" : "#FFFFFF")};
+  color: ${(props) => (props.iselected ? "#FFFFFF" : "#333")};
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 
   &:hover {
-    background: #00B2FF;
-    color: #FFFFFF;
+    background: #00b2ff;
+    color: #ffffff;
+  }
+`;
+const SelectedWishesButton = styled.button`
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #FFFFFF;
+  background: #FF5722;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  &:hover {
+    background: #E64A19;
   }
 `;
 
-const WishSelector = ({isModalVisible,handleModalClose,onClick}) => {
+const WishSelector = ({ isModalVisible, handleModalClose, onClick }) => {
   const [selectedWishes, setSelectedWishes] = useState([]);
-  onClick(selectedWishes.length)
+  const [show, setShow] = useState(false);
+  onClick(selectedWishes.length);
 
   const handleWishClick = (wish) => {
     if (!selectedWishes.includes(wish) && selectedWishes.length === 12) {
@@ -75,25 +92,38 @@ const WishSelector = ({isModalVisible,handleModalClose,onClick}) => {
         ? [...prevWishes, wish]
         : prevWishes
     );
-    
   };
+  function handleClick() {
+    setShow((prev) => !prev);
+  }
 
   return (
     <div>
-      <h2 style={{color:"magenta", marginTop:"50px"}}>Here's the Your GENIE, make a wish of what you want?</h2>
+      <h2 style={{ color: "magenta", marginTop: "50px" }}>
+        Here's the Your GENIE, make a wish of what you want?
+      </h2>
       <p></p>
-      <h2>Please Go Ahead and Select 12 of them for a Fantastic Year Ahead</h2>
-      <WishContainer>
-        {wishes.map((wish, index) => (
-          <WishItem
-            key={index}
-            iselected={selectedWishes.includes(wish)}
-            onClick={() => handleWishClick(wish)}
-          >
-            {wish}
-          </WishItem>
-        ))}
-      </WishContainer>
+      <SelectedWishesButton onClick={handleClick}>Let's Make a wish</SelectedWishesButton>
+      {!show && <WishDemoContainer/>}
+      {show && (
+        <>
+  
+          <h2>
+            Please Go Ahead and Select 12 of them for a Fantastic Year Ahead
+          </h2>
+          <WishContainer>
+            {wishes.map((wish, index) => (
+              <WishItem
+                key={index}
+                iselected={selectedWishes.includes(wish)}
+                onClick={() => handleWishClick(wish)}
+              >
+                {wish}
+              </WishItem>
+            ))}
+          </WishContainer>
+        </>
+      )}
       <Modal
         isVisible={isModalVisible}
         onClose={handleModalClose}
