@@ -17,7 +17,7 @@ const SelectedWishesButton = styled.button`
   }
 `;
 
-export default function Header({ handleModalOpen }) {
+export default function Header({ handleModalOpen,count }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -41,8 +41,11 @@ export default function Header({ handleModalOpen }) {
         <img src={logo} alt="" />
         <h1>Birthday Bash</h1>
       </div>
+      <div id='middletitle'>
+        <h3>Spreading Joys🎂🎉</h3>
+      </div>
       <SelectedWishesButton onClick={handleModalOpen}>
-        My Wishes
+        My Wishes ({count})
       </SelectedWishesButton>
     </section>
   );

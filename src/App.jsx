@@ -36,26 +36,33 @@ const SurpriseButton = styled.button`
 const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [count, setCount] = useState(0);
+
   const handleButtonClick = () => {
     setIsVisible((prev) => !prev);
   };
 
   const handleModalOpen = () => {
-    setIsModalVisible(true);
+    if (count !== 0) {
+      setIsModalVisible(true);
+    }
   };
 
   const handleModalClose = () => {
     setIsModalVisible(false);
   };
+  function handleCount(int) {
+    setCount(int);
+  }
 
   return (
     <>
-      <Header handleModalOpen={handleModalOpen} />
+      <Header handleModalOpen={handleModalOpen} count={count} />
       <AppContainer>
         <h1 style={{ color: "black" }}>Hi, Dipan!</h1>
-        <h2> Is there something Special Today??</h2>
+        <h2> Is there something Special Today??🤔</h2>
         <SurpriseButton onClick={handleButtonClick}>
-          Let's Find Out!!!
+          Let's Find Out!!!💡
         </SurpriseButton>
         <BirthdayWish
           isVisible={isVisible}
@@ -65,11 +72,14 @@ const App = () => {
 
         {isVisible && (
           <>
-            <h2 style={{textAlign:"left", color:"magenta"}}>Your Loved Ones Wishing You :):)</h2>
+            <h2 style={{ color: "magenta", marginTop: "100px" }}>
+              Your Loved Ones are Wishing You :):)
+            </h2>
             <Wishes />
             <WishSelector
               isModalVisible={isModalVisible}
               handleModalClose={handleModalClose}
+              onClick={handleCount}
             />
           </>
         )}

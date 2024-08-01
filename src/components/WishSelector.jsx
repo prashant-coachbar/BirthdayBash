@@ -60,10 +60,14 @@ const WishItem = styled.div`
   }
 `;
 
-const WishSelector = ({isModalVisible,handleModalClose}) => {
+const WishSelector = ({isModalVisible,handleModalClose,onClick}) => {
   const [selectedWishes, setSelectedWishes] = useState([]);
+  onClick(selectedWishes.length)
 
   const handleWishClick = (wish) => {
+    if (!selectedWishes.includes(wish) && selectedWishes.length === 12) {
+      alert("Heyy!!! Only 12");
+    }
     setSelectedWishes((prevWishes) =>
       prevWishes.includes(wish)
         ? prevWishes.filter((w) => w !== wish)
@@ -71,11 +75,12 @@ const WishSelector = ({isModalVisible,handleModalClose}) => {
         ? [...prevWishes, wish]
         : prevWishes
     );
+    
   };
 
   return (
     <div>
-      <h2>Here's the Your GENIE, make a wish of what you want?</h2>
+      <h2 style={{color:"magenta", marginTop:"50px"}}>Here's the Your GENIE, make a wish of what you want?</h2>
       <p></p>
       <h2>Please Go Ahead and Select 12 of them for a Fantastic Year Ahead</h2>
       <WishContainer>

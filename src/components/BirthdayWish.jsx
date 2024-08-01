@@ -16,8 +16,8 @@ const fadeIn = keyframes`
 const WishContainer = styled.div`
   display: ${(props) => (props.isVisible ? 'block' : 'none')};
   text-align: center;
-  padding: 20px;
-  background: #FFFFFF;
+  padding: 10px;
+  background: #666666;
   border-radius: 10px;
   margin-top:20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@ const Message = styled.h1`
 const BirthdayWish = ({ isVisible, name, message }) => (
   <WishContainer isVisible={isVisible}>
     <Avatar src={photo} alt={`${name}'s Avatar`} />
-    <Message>{message}</Message>
+    {/* <Message>{message}</Message> */}
   </WishContainer>
 );
 

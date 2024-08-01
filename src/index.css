@@ -94,6 +94,14 @@ button:focus-visible {
   gap: 1rem;
   align-items: center;
 }
+#main-header #middletitle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+h3{
+  text-align: center;
+}
 
 #main-header #title img {
   width: 3rem;

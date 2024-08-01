@@ -9,20 +9,20 @@ const wishes = [
   },
   {
     name: "Indrajit",
-    message: "Happy Birthday Dipan!!! I wish you achieve your dreams !!!!",
+    message: "Happy Birthday Dipan!!! I wish you achieve your dreams!!!!",
   },
   {
     name: "Krishna Jani",
-    message: "Happy Birthday Dipan! have a wonderful day and year ahead.",
+    message: "Happy Birthday Dipan! have a wonderful day and year ahead.🎊🎊",
   },
   {
     name: "Rob",
     message:
-      "Happy Birthfay Dipan Gajjar! Hope you are having a great day and cracking fun year ahead:):)",
+      "Happy Birthday Dipan Gajjar! Hope you are having a great day and cracking fun year ahead:):)",
   },
   {
     name: "Akshay Tukadiya",
-    message: "Happy Birthday Dipan Gajjar",
+    message: "Happy Birthday Dipan Gajjar 🎉🎂",
   },
   {
     name: "Shawn Fernando",
@@ -30,7 +30,7 @@ const wishes = [
   },
   {
     name: "Bijal",
-    message: "Wish you a very happy birthday Dipan Gajjar. Many many more to come! Have a splendid day! ",
+    message: "Wish you a very happy birthday Dipan Gajjar. Many many more to come! Have a splendid day!🎂 ",
   },
   {
     name: "Roshni",
