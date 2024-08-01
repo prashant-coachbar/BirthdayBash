@@ -65,7 +65,7 @@ const App = () => {
 
         {isVisible && (
           <>
-            <h3>Your Loved Ones Wishing You :):)</h3>
+            <h2 style={{textAlign:"left", color:"magenta"}}>Your Loved Ones Wishing You :):)</h2>
             <Wishes />
             <WishSelector
               isModalVisible={isModalVisible}

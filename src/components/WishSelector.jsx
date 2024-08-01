@@ -75,8 +75,9 @@ const WishSelector = ({isModalVisible,handleModalClose}) => {
 
   return (
     <div>
-      <h2>Here are 25 Wishes for you</h2>
-      <h2>Please Select 12 of them for a Fantastic Year Ahead</h2>
+      <h2>Here's the Your GENIE, make a wish of what you want?</h2>
+      <p></p>
+      <h2>Please Go Ahead and Select 12 of them for a Fantastic Year Ahead</h2>
       <WishContainer>
         {wishes.map((wish, index) => (
           <WishItem
