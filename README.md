@@ -1,3 +1,3 @@
-#Birthday Bash
+# Birthday Bash
 
 A customizable birthday wishing feature.
